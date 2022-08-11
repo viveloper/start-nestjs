@@ -1,15 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
+import { GetUsersDto } from './dto/get-users.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    const { name, email } = createUserDto;
+    return `유저를 생성했습니다. 이름: ${name}, 이메일: ${email}`;
   }
 
-  findAll() {
-    return `This action returns all users`;
+  findAll(getUsersDto: GetUsersDto) {
+    const { offset, limit } = getUsersDto;
+    return `This action returns all users (offset: ${offset}, limit: ${limit})`;
   }
 
   findOne(id: number) {
