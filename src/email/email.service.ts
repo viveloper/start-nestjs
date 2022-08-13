@@ -16,7 +16,7 @@ export class EmailService {
       service: 'Gmail',
       auth: {
         user: 'ucsik1234@gmail.com', // TODO: config
-        pass: 'mjvqizuqjfpzptpr', // TODO: config
+        pass: 'password', // TODO: config
       },
     });
   }
